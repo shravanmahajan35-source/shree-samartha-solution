@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Shree Samartha Solution | Insurance & Real Estate</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Shree Samartha Solution - Trusted Insurance & Real Estate Services. Call 9665555010 or contact us via WhatsApp.">
+<meta name="keywords" content="Insurance, Real Estate, Health, Life, Vehicle, Property">
+<meta name="author" content="Shree Samartha Solution">
+
+<!-- PWA Manifest inside HTML -->
+<script>
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register(URL.createObjectURL(new Blob([`
+    self.addEventListener('install', function(event){console.log('Service Worker Installed');});
+    self.addEventListener('fetch', function(event){});
+  `], {type: 'application/javascript'})));
+}
+</script>
+
+<style>
+:root{
+    --bg:#f2f7f9;
+    --text:#2c2c2c;
+    --primary:#0b7285;
+    --secondary:#1c7ed6;
+    --card:#ffffff;
+}
+body.dark{
+    --bg:#0f172a;
+    --text:#e5e7eb;
+    --card:#1e293b;
+}
+*{margin:0;padding:0;box-sizing:border-box;font-family:Arial, Helvetica, sans-serif;}
+body{background:var(--bg);color:var(--text);transition:0.3s;}
+header{background:linear-gradient(135deg,var(--primary),var(--secondary));color:white;position:sticky;top:0;z-index:1000;padding:18px 25px;box-shadow:0 4px 15px rgba(0,0,0,0.3);}
+.header-container{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;}
+.brand{display:flex;align-items:center;gap:15px;}
+.logo{width:85px;background:white;padding:6px;border-radius:12px;box-shadow:0 8px 20px rgba(0,0,0,0.35);transition:0.3s;}
+.logo:hover{box-shadow:0 12px 30px rgba(0,0,0,0.5);transform:scale(1.03);}
+nav button{background:white;color:var(--primary);border:none;padding:8px 18px;margin:4px;border-radius:30px;cursor:pointer;font-weight:bold;transition:0.3s;}
+nav button:hover{background:var(--primary);color:white;box-shadow:0 5px 15px rgba(0,0,0,0.3);}
+.toggle{background:black;color:white;border:none;padding:8px 14px;border-radius:30px;cursor:pointer;}
+section{padding:60px 10%;display:none;animation:fade 0.5s ease;}
+section.active{display:block;}
+@keyframes fade{from{opacity:0; transform:translateY(15px);} to{opacity:1; transform:translateY(0);}}
+.hero{background:linear-gradient(135deg,#e3f8ff,#f1f5ff);border-radius:25px;padding:60px;box-shadow:0 15px 40px rgba(0,0,0,0.15);text-align:center;}
+.hero h1{font-size:38px;color:var(--primary);}
+.hero p{margin:15px 0 25px;font-size:18px;}
+.hero-buttons button{padding:12px 25px;margin:8px;border:none;border-radius:30px;background:linear-gradient(135deg,var(--primary),var(--secondary));color:white;font-size:16px;cursor:pointer;transition:0.3s;}
+.hero-buttons button:hover{transform:translateY(-3px);box-shadow:0 8px 25px rgba(0,0,0,0.3);}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:25px;}
+.card{background:var(--card);padding:25px;border-radius:18px;box-shadow:0 10px 25px rgba(0,0,0,0.12);text-align:center;transition:0.3s;}
+.card:hover{transform:translateY(-10px);box-shadow:0 18px 40px rgba(0,0,0,0.25);}
+.card button{margin-top:12px;padding:10px 18px;background:linear-gradient(135deg,var(--primary),var(--secondary));color:white;border:none;border-radius:25px;cursor:pointer;}
+form{max-width:420px;margin:auto;background:var(--card);padding:30px;border-radius:18px;box-shadow:0 10px 25px rgba(0,0,0,0.15);}
+form input, form textarea{width:100%;padding:12px;margin:10px 0;border-radius:10px;border:1px solid #ccc;}
+form button{width:100%;padding:12px;background:linear-gradient(135deg,var(--primary),var(--secondary));color:white;border:none;border-radius:30px;}
+.map{margin-top:30px;border-radius:20px;overflow:hidden;box-shadow:0 10px 30px rgba(0,0,0,0.2);}
+.bottom-bar{position:fixed;bottom:0;left:0;width:100%;background:linear-gradient(135deg,var(--primary),var(--secondary));display:flex;justify-content:center;gap:30px;padding:12px;z-index:999;}
+.bottom-bar a{color:white;text-decoration:none;font-weight:bold;padding:10px 20px;background:rgba(255,255,255,0.15);border-radius:30px;transition:0.3s;}
+.bottom-bar a:hover{background:white;color:var(--primary);}
+footer{background:#0b7285;color:white;text-align:center;padding:20px;margin-bottom:60px;}
+</style>
+</head>
+<body>
+
+<header>
+    <div class="header-container">
+        <div class="brand">
+            <img src="logo.jpeg" class="logo">
+            <div>
+                <h2>Shree Samartha Solution</h2>
+                <small>Insurance & Real Estate</small>
+            </div>
+        </div>
+        <nav>
+            <button onclick="show('home')">Home</button>
+            <button onclick="show('services')">Services</button>
+            <button onclick="show('about')">About</button>
+            <button onclick="show('contact')">Contact</button>
+            <button class="toggle" onclick="toggleDark()">🌙</button>
+        </nav>
+    </div>
+</header>
+
+<section id="home" class="active">
+    <div class="hero">
+        <h1>Protecting Your Life, Health & Future</h1>
+        <p>Trusted insurance and real estate solutions with honesty, transparency, and customer-first service.</p>
+        <div class="hero-buttons">
+            <button onclick="show('services')">Our Services</button>
+            <button onclick="show('contact')">Contact Us</button>
+        </div>
+    </div>
+</section>
+
+<section id="services">
+    <h2>Our Services</h2>
+    <div class="cards">
+        <div class="card"><h3>Life Insurance</h3><button onclick="apply('Life Insurance')">Apply</button></div>
+        <div class="card"><h3>Health Insurance</h3><button onclick="apply('Health Insurance')">Apply</button></div>
+        <div class="card"><h3>Vehicle Insurance</h3><button onclick="apply('Vehicle Insurance')">Apply</button></div>
+        <div class="card"><h3>Real Estate</h3><button onclick="apply('Real Estate')">Enquire</button></div>
+    </div>
+</section>
+
+<section id="about">
+    <h2>About Us</h2>
+    <p>Shree Samartha Solution is committed to delivering reliable, transparent, and affordable insurance & property solutions.</p>
+</section>
+
+<section id="contact">
+    <h2>Contact Us</h2>
+    <p><strong>Phone:</strong> 9665555010</p>
+
+    <form onsubmit="send(event)">
+        <input placeholder="Name" required>
+        <input type="email" placeholder="Email" required>
+        <input placeholder="Phone" required>
+        <textarea placeholder="Message"></textarea>
+        <button>Send Message</button>
+    </form>
+
+    <div class="map">
+        <iframe
+            src="https://www.google.com/maps?q=YOUR_LATITUDE,YOUR_LONGITUDE&output=embed"
+            width="100%" height="300" style="border:0;" loading="lazy">
+        </iframe>
+    </div>
+</section>
+
+<footer>
+    © 2026 Shree Samartha Solution | All Rights Reserved
+</footer>
+
+<div class="bottom-bar">
+    <a href="tel:+919665555010">📞 Call 9665555010</a>
+    <a href="https://wa.me/919665555010?text=Hello,%20I%20want%20insurance%20details" target="_blank">💬 WhatsApp</a>
+</div>
+
+<script>
+function show(id){
+    document.querySelectorAll("section").forEach(s=>s.classList.remove("active"));
+    document.getElementById(id).classList.add("active");
+}
+function apply(service){
+    alert("Thank you for choosing "+service+". We will contact you soon.");
+}
+function send(e){
+    e.preventDefault();
+    alert("Message sent successfully!");
+    e.target.reset();
+}
+function toggleDark(){
+    document.body.classList.toggle("dark");
+}
+</script>
+
+</body>
+</html>
